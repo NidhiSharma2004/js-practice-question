@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-image:url("https://butiqescapes.com/wp-content/uploads/2017/02/supercar-vacation-road-in-forest-shining-sun.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .container{
+        /* border: 2px solid; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 395px;
+        width: 508px;
+        border-radius: 50%;
+        color: white;
+        margin-left: 149px;
+        margin-top: 70px;
+        background-color: rgba(255, 255, 255, 0.096);
+    }
+    .dayConatiner, .timeConatiner, .dateConatiner{
+        display: flex;
+        width: 393px;
+        justify-content: space-around;
+    }
+</style>
+<body>
+    
+    <div class="container">
+        <div class="dayConatiner">
+            <h1>Today is:</h1>
+            <h1 id="day"></h1>
+        </div>
+        <div class="timeConatiner">
+            <h1>Current Time is:</h1>
+            <h1 id="time"></h1>
+        </div>
+        <div class="dateConatiner">
+            <h1>Current date is:</h1>
+            <h1 id="date"></h1>
+        </div>
+    </div>
+
+    <script>
+        function getTime(){
+            var date = new Date();
+            var cDate = date.getDate();
+            var cMonth = date.getMonth();
+            var month;
+            if(cMonth<9){
+                month = "0"+(cMonth+1)
+            }else{
+                month=(cMonth+1)
+            }
+            var cYear = date.getFullYear();
+            document.getElementById("date").innerText=`${cDate}-${month}-${cYear}`
+            var cHours = date.getHours();
+            var cMin = date.getMinutes();
+            var cSec = date.getSeconds();
+            document.getElementById("time").innerText= `${cHours}hr. ${cMin}min. ${cSec}sec`
+            var cDay = date.getDay();
+            var daylist = ["Monday","tuesday","wednesday","thrusday","friday","saturday","sunday"]
+            var day = daylist[cDay-1]
+            document.getElementById("day").innerText=day
+        }
+
+        setInterval(getTime, 1000);
+      
+       
+     
+         
+    </script>
+</body>
+</html>

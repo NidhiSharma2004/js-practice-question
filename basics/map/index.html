@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>map</title>
+</head>
+<style>
+    .btn {
+        cursor: pointer;
+    }
+
+    .container {
+        border: 3px solid black;
+        width: 300px;
+    }
+
+    .history{
+        display: none;
+    }
+
+    .vision {
+        display: none;
+    }
+
+    .about {
+        display: none;
+    }
+
+    .show {
+        display: inline;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div id="btns">
+            <button class="btn">History</button>
+            <div class="history">
+                histoty historyLorem ipsum dolor, sit amet consectetur adipisicing
+                elit. At voluptatum quo cum, ab facere nisi architecto dolor quia
+                iusto perferendis tempore voluptates nam sapiente repudiandae sunt,
+                porro, sed nemo rerum.
+            </div>
+            <button class="btn">Vision</button>
+            <div class="vision">
+                vision vision Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Asperiores sint perferendis dolorem architecto eum voluptate ut,
+                veniam facere ab dignissimos cupiditate earum corporis, culpa omnis.
+            </div>
+            <button class="btn">About</button>
+            <div class="about">
+                about about about Lorem, ipsum dolor sit amet consectetur adipisicing
+                elit. Nulla vitae nihil accusantium officiis, officia natus vero
+                deserunt magnam impedit unde quae voluptatibus quo et dolorem dignissi
+            </div>
+        </div>
+    </div>
+    <script>
+
+
+
+        // const btns = document.querySelectorAll(".btn");
+        // // console.log(btn)
+        // btns.forEach((btn) => {
+        //     // console.log(btn.nextElementSibling.firstChild.parentElement)
+        //     btn.addEventListener("click",function(e){
+        //         let nextElem = e.target.nextElementSibling;
+        //         nextElem.classList.add("show")
+        //         btns.forEach(item => {
+        //         if(item!=btn){
+        //             item.nextElementSibling.classList.remove("show");
+        //             console.log(item.nextElementSibling);
+        //         }
+        //     });
+        //     })
+            
+        // });
+        
+        // function showFirstElem(){
+        //     let btnsConatiner = document.getElementById("btns");
+        //     console.log(btnsConatiner)
+        //     let history = btnsConatiner.firstElementChild.nextElementSibling;
+        //     console.log(history)
+        //     history.classList.add("show")
+
+        // }
+
+        // window.onload = showFirstElem
+      // const arr = ["1","2","3","4"]
+
+      // const output = []
+      // for(let i=0;i<arr.length;i++){
+      //  output.push(arr[i]*2)
+      // }
+      // console.log(output)
+      // CUSTOMISED
+      // const newarr = arr.map((curval)=>{
+      //     return curval*2
+      // });
+      // console.log(newarr)
+
+      // MORE CUSTMOSIED
+
+      // ya bs function bana hai or as an argment pass krna h
+
+      // function double(x){
+      //     return x*2
+      // }
+      // const output = arr.map(double)
+      // console.log(`double the function`,output)
+
+      // function add(x){
+      //     return x*100;
+      // }
+      //  const result = arr.map(add)
+      //  console.log(`add the function`,result)
+
+      // AT LAST CUSTMOSIED WAY
+
+      // const output = arr.map((x)=>{
+      //     return x*2
+      // })
+
+      // console.log(output)
+
+      //  QUESTION
+      // FIND NO GREATER THAN 4;
+      // const arr = [9,1,2,0,8,7,6,4,2,5]
+      // const output = arr.map((x)=>{
+      //     return x>4
+      // })
+
+      // const output = arr.filter((x)=>{
+      //     return x>4
+      // })
+      // console.log(output)
+
+      // get addition of all element
+      //     var add=0;
+      //   const output = arr.map((elem)=>{
+      //       return add+=elem
+      //   })
+      //   console.log(add)
+
+      // REDUCE METHOD;
+
+      // const arr = [9,1,2,0,8,7,6,4,2,5,11,0,7,5,4,24,3,4,5,6]
+
+      // const add = arr.reduce((accum,curr)=>{
+      //     return accum+curr
+      // });
+      // console.log(add);
+
+      // const product = arr.reduce((accum,curr)=>{
+      //     // debugger;
+      //     return accum+curr*curr
+      // },0)
+      // console.log(product);
+
+      // // get maximum value in the array
+      // const max = arr.reduce((acc,curr)=>{
+      //     // return accum+curr
+      //     if(acc<curr){
+      //         acc=curr
+      //     }
+      //     return acc
+      // },0)
+      // console.log(max)
+
+      // PRINT FULL NAME BY USING MAP METHOD
+      // const list = [
+      //     {firstName:"nidhi" ,lastName:"sharma", age:17},
+      //     {firstName:"akash" ,lastName:"sharma", age:20},
+      //     {firstName:"vidhi" ,lastName:"sharma", age:15},
+      //     {firstName:"saurav" ,lastName:"sharma", age:23}
+      // ]
+
+      // const value = list.map((elem)=>{
+      //     // console.log(elem)
+      //     return `my name is ${elem.firstName} ${elem.lastName}`
+      // })
+      // console.log(value)
+
+      // CHECK HOWMANY NO OF PEOPLE WITH SAME AGE
+      //     const noPersonAge = list.reduce((acc,elem)=>{
+      //         // 2.check krenge is same element ki age present hai ya nhi
+      //         // present h to usme ek or add kr do
+      //         if(acc[elem.age]){
+      //             acc[elem.age]=++accum[elem.age]
+      //         }
+      //         // phele to hr elem ki age ek bar jayege
+      //         // to hm object main 1 kr denge
+      //         else{
+      //             acc[elem.age] = 1;
+      //         }
+      //         return acc
+      // },{})
+      //     console.log(noPersonAge)
+
+      // CHECK HOWMANY NO OF PEOPLE GREATER THEN 18 ANDWRITE THEIR FIRSTNAME
+
+      // yha map wali conditon thbhi run hogi jb age>18 hogi
+      // const greaterThan18 = list.filter((elem)=>elem.age>18).map((elem)=>elem.firstName)
+      // console.log(greaterThan18)
+
+      // DO SAME THING WITH REDUCE
+
+      // const greaterThan18 = list.reduce((accum,curr)=>{
+      //     if(curr.age>18){
+      //         accum=[...accum,curr.firstName]
+      //     }
+      //     return accum
+      // },[])
+      // console.log(greaterThan18)
+
+      // var names = ["ef","weg","gwv","geger"]
+      //     var nsbd = new Array;
+      //  for(let i=0;i<names.length;i++){
+      //     nsbd.push(names[i])
+      // }
+      // console.log(nsbd)
+
+      // names.forEach(name =>{
+      //     console.log(name)
+      // })
+
+      // const list = [
+      // {firstName:"nidhi" ,lastName:"sharma", age:17},
+      // {firstName:"akash" ,lastName:"sharma", age:20},
+      // {firstName:"vidhi" ,lastName:"sharma", age:15},
+      // {firstName:"saurav" ,lastName:"sharma", age:23}
+      // ]
+      // // var videoTittle = [];
+      // get firstName and lastName
+      // list.forEach(item=>{
+      //     videoTittle.push(item.firstName,item.lastName)
+      // });
+      // console.log(videoTittle)
+
+      // const value = list.map((x)=>{
+      //     videoTittle.push(`Name : ${x.firstName} ${x.lastName}`)
+      // })
+      // coznsole.log(videoTittle)
+
+      // var item = [2,5,7,3,2,5,9,7]
+      // function sumTwoSmallestNumbers(numbers) {
+      //   const sortnumber = numbers.sort((a,b)=>{
+      //     return a-b
+      //   })
+      //   return sortnumber[0]+sortnumber[1];
+      // }
+      // console.log(sumTwoSmallestNumbers(item))
+
+      // var str = ("6847_564443378479")
+      // let newStr='';
+      // for(let i=0;i<str.length-4;i++){
+      //      newStr+= "#"
+
+      // }
+      // var lastfourchar = str.slice(-4);
+      // var result = newStr+lastfourchar
+      // console.log(result)
+
+      // var str = ("nidhi");
+      // console.log(str.length)
+      // var str2 = ("hey nidhi")
+
+      // for(let i=0;i<str2.length;i++){
+
+      //     if(str2.includes(" ")){
+      //     var splitstr = str2.split(" ");
+      //     console.log(splitstr[0])
+      //     var slicestr = splitstr.slice(1,end)
+      //     console.log(slicestr)
+      //     var revrsestr = slicestr.reverse();
+      //     var joinstr = revrsestr.join("")
+      //     console.log()
+
+      //     }else{
+      //     var splitstr = str2.split("");
+      //     var revrsestr = splitstr.reverse();
+      //     var joinstr = revrsestr.join("");
+      //     }
+      // }
+      // console.log(joinstr)
+
+      // var str = ("nidhi")
+      // // console.log(str)
+      // function is_isogram(str) {
+      //     str = str.toLowerCase();
+      //     // console.log(str)
+      //     let len = str.length;
+      //     // console.log(len);
+      //     let arr = str.split("");
+      //     // console.log(arr);
+      //     arr.sort()
+      //     // console.log(sort)
+      //     for (let i = 0; i < len-1; i++) {
+      //         if (arr[i] === arr[i + 1])
+      //             return false;
+      //     }
+      //     return true;
+      // }
+      // is_isogram(str)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mathmatics</title>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="input1" placeholder="enter number">
+        <input type="text" id="input2" placeholder="enter number">
+        <button id="btn1">Multiply</button>
+        <button id="btn2">Divide</button>
+        <h2 id="show"></h2>
+    </div>
+
+    <script>
+        const multiply = document.getElementById("btn1");
+        const divivde = document.getElementById("btn2");
+        
+        multiply.addEventListener("click",()=>{
+            const value1 = document.getElementById("input1").value;
+            const value2 = document.getElementById("input2").value;
+            var result = (value1*value2);
+            // console.log(result);
+            document.getElementById("show").innerText=result;
+        })
+        divivde.addEventListener("click",()=>{
+            const value1 = document.getElementById("input1").value;
+            const value2 = document.getElementById("input2").value;
+            var result = (value1/value2);
+            console.log(result);
+            document.getElementById("show").innerText=result;
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>usrguess</title>
+</head>
+<style>
+    body{
+        background: rgba(112, 27, 16, 0.774);
+    } 
+    .container{
+        margin-left: 467px;
+        margin-top: 150px;
+        width: 616px;
+    }
+    #number{
+        height: 30px;
+        width: 294px;
+        border: 1px solid white;
+        display:none;
+    }
+    #btn, #refresh{
+        width: 100px;
+        height: 34px;
+        background: rgb(49, 1, 1);
+        border: none;
+        color: white;
+        border-radius: 3px;
+    }
+    #refresh{
+        background-color: rgb(9, 44, 41);
+    }
+    h1{
+        font-size: 4rem;
+        color: rgb(240, 217, 217);
+    }
+    #result{
+        font-size: 5rem;
+        width: 337px;
+        margin-top: 3px;
+        padding: 2px;
+        color: rgb(110, 5, 27);
+    }
+</style>
+<body>
+    <div class="container">
+        <h1 id="target">
+            click the button to play game
+        </h1>
+        <input type="text" id="number" placeholder="Enter your value">
+        <button id="btn">Click me</button>
+        <button id="refresh">refresh me</button>
+        <h1 id="result"></h1>
+    </div>
+
+    <script>
+        const btn = document.getElementById("btn");
+        const refresh = document.getElementById("refresh");
+        const number = document.getElementById("number");
+
+        
+        // refresh.addEventListener("click",()=>{
+        //     number.value='';
+        //     document.getElementById("result").innerText='';
+        //     number.style.display="none";
+        // })
+
+
+        // function result(){
+        //     var value = number.value;
+        //     var resultdec;
+        //     if(value==''){
+        //         resultdec="enter value within 5sec"
+
+        //     }
+        //     else if(value<0||value>=10){
+        //         resultdec="invalid!"
+        //         console.log(resultdec)
+        //     }else if(value<4 || value>6 ){
+        //         resultdec = "Not Matched!"
+        //         console.log(resultdec)
+        //     }else if(value==4||value==6){
+        //         resultdec= "so close!"
+        //         console.log(resultdec)
+        //     }else if(value==5){
+        //         resultdec="Your Guess Is Right!"
+        //         console.log(resultdec)
+        //     }
+        //     document.getElementById("result").innerText=resultdec;
+        // }
+        // btn.addEventListener("click",()=>{
+        //     number.style.display="inline";
+            
+        //     setTimeout(result,5000)
+        // })
+
+
+
+        // set traget randomly
+
+    btn.addEventListener("click",()=>{
+
+    var guess = prompt("enter a number between 0 to 10")
+    var rndmNmbr = Math.ceil(Math.random()*10)
+    console.log(rndmNmbr)
+    if(guess===rndmNmbr){
+    document.getElementById("result").innerText=`you guess is right!`;
+    }
+    else{
+        document.getElementById("result").innerText=`you guess is worng!`;
+    }
+    document.getElementById("target").innerText=`target was ${rndmNmbr} and  your number was ${guess}`
+    })
+         
+    refresh.addEventListener("click",function(){
+        document.getElementById("target").innerText=`click the button to play game`
+        document.getElementById("result").innerText=``
+    })
+    </script>
+</body>
+</html>
